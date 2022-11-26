@@ -1,0 +1,267 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+  font-family: "Roboto";
+  color: #21243D;
+}
+
+a {
+  display: inline-block;
+  transition: 100ms;
+}
+a:hover {
+  scale: 1.1;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 27px 5%;
+  font-weight: 500;
+  font-size: 20px;
+}
+nav .menu {
+  display: flex;
+  gap: 30px;
+  z-index: 100;
+}
+nav a:hover, nav a.active {
+  color: rgb(255, 100, 100);
+}
+nav input, nav label {
+  display: none;
+}
+nav .bgmn {
+  display: none;
+}
+
+.showcase {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 100px 10%;
+  align-items: center;
+}
+.showcase img {
+  width: 30%;
+}
+.showcase .def {
+  max-width: 600px;
+  width: 70%;
+}
+.showcase .def h1 {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 60px;
+}
+.showcase .def p {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 40px 0;
+}
+.showcase .def a {
+  font-size: 20px;
+  padding: 15px 20px;
+  background-color: rgb(255, 100, 100);
+  color: white;
+  font-weight: 500;
+}
+.showcase .def a:hover {
+  background-color: #ff7e7e;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.274);
+}
+.showcase .def a:active {
+  scale: 0.95;
+  background-color: #ff4b4b;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0);
+}
+
+.recent {
+  background-color: rgb(237, 247, 250);
+  padding: 30px 10%;
+}
+.recent h1 {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+.recent h1 a {
+  color: rgb(0, 168, 204);
+  font-size: 16px;
+}
+.recent .cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.recent .cards .card {
+  background-color: white;
+  padding: 24px;
+  min-width: 200px;
+  width: 48%;
+  transition: 300ms;
+}
+.recent .cards .card:hover {
+  scale: 1.05;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.01);
+}
+.recent .cards .card h3 {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 700;
+}
+.recent .cards .card p:nth-child(2) {
+  padding: 17px 0;
+}
+.recent .cards .card p:last-child {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.features {
+  padding: 30px 10%;
+}
+.features h1 {
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+}
+.features .card {
+  display: flex;
+  padding-block: 25px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  gap: 20px;
+}
+.features .card .def h3 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 44px;
+}
+.features .card .def div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.features .card .def div p:first-child {
+  color: white;
+  font-weight: 700;
+  background-color: #21243D;
+  padding: 3px 10px;
+  border-radius: 16px;
+}
+.features .card .def div p:last-child {
+  color: grey;
+}
+.features .card .def > p {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 10%;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+}
+footer div {
+  max-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+footer a {
+  font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+  .showcase {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .showcase img {
+    max-width: 250px;
+    margin: 20px;
+    width: 100%;
+  }
+  .recent .cards .card {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .showcase .def h1 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .showcase .def p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .showcase .def a {
+    font-size: 15px;
+  }
+  .features .card {
+    flex-direction: column;
+  }
+  .features .card img {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  nav #menu:checked + .menu {
+    translate: 0;
+  }
+  nav #menu:checked ~ .bgmn {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.342);
+    z-index: 99;
+  }
+  nav .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    overflow-y: scroll;
+    width: 80%;
+    gap: 0;
+    border-right: 2px solid rgba(0, 0, 0, 0.185);
+    translate: -110%;
+    transition: 300ms;
+  }
+  nav .menu a {
+    padding: 20px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+  }
+  nav .menu::-webkit-scrollbar {
+    display: none;
+  }
+  nav label {
+    display: block;
+    font-size: 30px;
+  }
+  .recent h1 {
+    justify-content: center;
+  }
+  .recent h1 a {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
